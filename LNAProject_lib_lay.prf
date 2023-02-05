@@ -1,0 +1,25 @@
+pathWidth 4.000000
+pathRadius 2.000000
+textHeight 10.000000
+instNameLayerID M2_TEXT:drawing
+instIDLayerID M1_TEXT:drawing
+instParam1LayerID GaV:drawing
+instTextHeight 0.750000
+gridSnapX 0.500000
+gridSnapY 0.500000
+tapLength 25.000000
+portSize 10.000000
+minVertexDistance 0.200000
+unitsFreq 0
+unitsRes 1
+unitsCond 4
+unitsInd 5
+unitsCap 5
+unitsLng 3
+unitsTime 5
+unitsAng 0
+unitsPower 4
+unitsVolt 5
+unitsCur 5
+unitsDist 0
+pinAnnotLayerID 

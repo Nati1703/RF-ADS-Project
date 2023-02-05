@@ -1,0 +1,7 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE $HPEESOF_DIR/oalibs/dsp.defs
+INCLUDE $HPEESOF_DIR/examples/DesignKit/DemoKit/lib.defs
+INCLUDE $HPEESOF_DIR/examples/DesignKit/DemoKit_Non_Linear/DemoKit_Non_Linear_v2.0/lib.defs
+DEFINE LNAProject_lib LNAProject_lib
+ASSIGN LNAProject_lib libMode shared
+INCLUDE $HOME/ADS(Circuit${__SPACE}sim)/LNAProject_wrk/RF_Transistors_vendor_kit/lib.defs

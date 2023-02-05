@@ -1,0 +1,28 @@
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="LNAProject_lib:BiasNw:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+MLIN2:TL1  N__3 N__2 Subst="MSub1" W=1.1 mm L=2 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+S_Param:SP1 CalcS=yes CalcY=no CalcZ=no GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0.5 GHz Stop=6.0 GHz Step=0.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+C:C1  N__15 0 C=470 pF 
+Port:TermG2  N__19 0 Num=2 Z=50 Ohm Noise=yes 
+Port:TermG1  N__3 0 Num=1 Z=50 Ohm Noise=yes 
+model MSub1 MSUB H=20.0 um Er=3.66 Mur=1 Cond=5.8E+7 Hu=1.0e+036 um T=0.035 mm TanD=0.0001 Rough=0 um DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+MLIN2:TL4  N__15 N__13 Subst="MSub1" W=45 mil L=0.5 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MTEE_ADS:Tee1  N__2 N__20 N__17 Subst="MSub1" W1=1.1 mm W2=1.1 mm W3=0.2 mm 
+MLIN2:TL5  N__12 0 Subst="MSub1" W=45.0 mil L=0.5 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MSTEP:Step1  N__16 N__15 Subst="MSub1" W1=0.2 mm W2=45 mil 
+MGAP:Gap1  N__13 N__12 Subst="MSub1" W=45.0 mil S=0.5 um 
+MLIN2:TL3  N__17 N__16 Subst="MSub1" W=0.2 mm L=25.0 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
+MLIN2:TL2  N__20 N__19 Subst="MSub1" W=1.1 mm L=2 mm Wall1=1.0E+30 um Wall2=1.0E+30 um Mod=1 
